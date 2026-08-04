@@ -1,3 +1,8 @@
+/*
+Creater an application.(Exception Handling)
+	-One program class.
+	-One class for performing division operation on two numbers.
+*/
 package com.companyname.projectname.modulename.main;
 
 import com.companyname.projectname.modulename.mathematics.Division;
