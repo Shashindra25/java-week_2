@@ -1,0 +1,110 @@
+8. Create an addition class in mathematics package.
+  -Create a division class in mathematics package.
+  -Create an order class in ecommerce package.
+  -Create a product class in ecommerce package.
+  -Create a debitCard class in bank package.
+  -Create a creditCard class in bank package.
+  
+  -Create a main program, that imports all the above packages and their classes, and then create object of all the classes.
+  (Note: The aim of these programs is to learn the usage of packages. So, keep a couple of methods in those classes, which prints something.)
+  
+9. Create a class within a package and declare 4 methods with public, protected and private access modifiers; and a method with default accessibility scope.
+  -Create a main class within the same package and create an object of the other class in same package and then call its methods.
+  -Create a main class, which is similar to the previous class but keep it in a different package.
+  
+10. Create a Shape class, declare string variables of color and lineType. And also add area and perimeter methods that return int value.
+	-Then declare applyColor and useLine methods with void return type. This class will be a parent class for other classes.
+   -Create a Rectangle class and make it a child of Shape class.
+    -Declare length and width integer variables.
+	-Use this and super keywords to create constructor.
+	-Override methods from parent class to calculate area and perimeter.
+	-Also override the applyColor and useLine methods from parent class.
+	-Create getter methods for length and width.
+   -Create a Circle class and make it a child of Shape class.
+	-Declare pi = 3.14159 and radius variables as double.
+    -Use this and super keywords to create constructor.
+	-Override methods from parent class to calculate area and perimeter.
+	-Also override the applyColor and useLine methods from parent class.
+	-Create getter method for radius.
+   -Create a main class and create the objects of Rectangle and Circle class.
+    -Use all the methods present in them.
+
+11. Creater an application.(Exception Handling)
+	-One program class.
+	-One class for performing division operation on two numbers.
+	
+12. Use 1.Basic single try catch, 2.One try Multiple catch, 3.Multiple try catch and 4.Nested try catch; in appropriate situations.
+
+13. Create a custom exception class "InsufficientBalanceException" that extends RuntimeException or Exception class and override getMessage method.
+   -Create a class "BankingOperations" that extends InsufficientBalanceException class.
+    -Create a method "withdraw" that throws InsufficientBalanceException and takes a double value "currentBalance", an int value "withdrawAmount" as parameters and returns a double value.
+	 -Now throw the InsufficientBalanceException by creating an object of the class, if the currentBalance < withdrawAmount.
+	 -Or else perform withdraw operation by removing withdrawAmount from currentBalance.
+	 -Then return the currentBalance;
+   -Create a class "Main" and create the object of banking operations class and perform withdraw operation.
+    -Also use try catch blocks to handle the exception that comes from the withdraw operation.
+	
+14. Step 1: Create the Abstract Class for 3D Shapes
+		1. Create a package named `com.company.product.module.mathematics.shape`.
+		2. Inside this package, create an abstract class named `ThreeDShape`.
+		3. Define two public abstract methods:
+			- `public abstract int calculateSurfaceArea();`
+			- `public abstract int calculateVolume();`
+
+	Step 2: Create the Abstract Class for 2D Shapes
+		1. In the same package (`com.company.product.module.mathematics.shape`), create an abstract class named `TwoDShape`.
+		2. Define two public abstract methods:
+			- `public abstract int calculateArea();`
+			- `public abstract int calculatePerimeter();`
+	(Note: You can leave a commented-out non-abstract version of this class above it as a historical reference, although not strictly necessary for functionality).
+
+	Step 3: Create the 3D Shape Implementation - Cube
+		1. Create a new package named `com.company.product.module.mathematics.geometry.threedshape`.
+		2. Import the `ThreeDShape` abstract class.
+		3. Create a public class named `Cube` that extends `ThreeDShape`.
+		4. Declare a public integer variable: `public int side`.
+		5. Create a constructor `public Cube(int side)` that initializes `this.side = side`.
+		6. Override `calculateVolume()` to return `side * side * side`.
+		7. Override `calculateSurfaceArea()` to return `6 * side * side`.
+
+	Step 4: Create the 3D Shape Implementation - Cuboid
+		1. In the same package (`com.company.product.module.mathematics.geometry.threedshape`), create a public class named `Cuboid` that extends `ThreeDShape`.
+		2. Declare three public integer variables: `length`, `width`, and `height`.
+		3. Create a constructor `public Cuboid(int length, int width, int height)` that initializes these three variables.
+		4. Override `calculateVolume()` to return `length * width * height`.
+		5. Override `calculateSurfaceArea()` to return `2 * ((width * height) + (length * width) + (length * height))`.
+
+	Step 5: Create the 2D Shape Implementation - Square
+		1. Create a new package named `com.company.product.module.mathematics.geometry.twodshape`.
+		2. Import the `TwoDShape` abstract class.
+		3. Create a public class named `Square` that extends `TwoDShape`.
+		4. Declare a public integer variable: `public int side`.
+		5. Create a constructor `public Square(int side)` that initializes `this.side = side`.
+		6. Override `calculateArea()` to return `(side * side)`.
+		7. Override `calculatePerimeter()` to return `(4 * side)`.
+
+	Step 6: Create the 2D Shape Implementation - Rectangle
+		1. In the same package (`com.company.product.module.mathematics.geometry.twodshape`), create a public class named `Rectangle` that extends `TwoDShape`.
+		2. Declare two public integer variables: `length` and `width`.
+		3. Create a constructor `public Rectangle(int length, int width)` that initializes both variables.
+		4. Override `calculateArea()` to return `(length * width)`.
+		5. Override `calculatePerimeter()` to return `(2 * (length + width))`.
+
+	Step 7: Create the Main Execution Class
+		1. Create a new package named `com.company.product.module.main`.
+		2. Import all the shapes (`Square`, `Rectangle`, `Cube`, `Cuboid`) and the abstract classes (`TwoDShape`, `ThreeDShape`) from their respective packages.
+		3. Create a public class named `Main`.
+		4. Add the standard main method: `public static void main(String[] args)`.
+		5. Inside the main method, implement the following logic in order:
+			- Instantiate a `Square` object with a side of 3.
+			- Print "Area of Square: " followed by the result of `square.calculateArea()`.
+			- Print "Perimeter of Square: " followed by the result of `square.calculatePerimeter()`.
+			- Instantiate a `Rectangle` object with length 3 and width 5.
+			- Print "Area of Rectangle: " followed by `rectangle.calculateArea()`.
+			- Print "Perimeter of Rectangle: " followed by `rectangle.calculatePerimeter()`.
+			- Instantiate a `Cube` object with a side of 3.
+			- Print "Surfacearea of Cube: " followed by `cube.calculateSurfaceArea()`.
+			- Print "Volume of Cube: " followed by `cube.calculateVolume()`.
+			- Instantiate a `Cuboid` object with length 3, width 4, and height 5.
+			- Print "Surfacearea of Cuboid: " followed by `cuboid.calculateSurfaceArea()`.
+			- Print "Volume of Cuboid: " followed by `cuboid.calculateVolume()`.
